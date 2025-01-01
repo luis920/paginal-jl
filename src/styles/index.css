@@ -661,11 +661,6 @@ body {
 }
 /* formulario nueva orden */
 .form-neworder {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 80%;
-  height: 75%;
   padding: 20px;
   border-radius: 20px;
   position: absolute;
@@ -675,129 +670,30 @@ body {
   background-color: #1a1a1a;
   color: #fff;
   border: 1px solid #333;
-}
-
-.title-neworder {
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: -1px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding-left: 30px;
-  color: #00bfff;
-}
-
-.title-neworder::before {
-  width: 18px;
-  height: 18px;
-}
-
-.title-neworder::after {
-  width: 18px;
-  height: 18px;
-  animation: pulse 1s linear infinite;
-}
-
-.title-neworder::before,
-.title-neworder::after {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  border-radius: 50%;
-  left: 0px;
-  background-color: #00bfff;
-}
-
-.message-neworder,
-.signin-neworder {
-  font-size: 14.5px;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.signin-neworder {
   text-align: center;
 }
-
-.signin-neworder a:hover {
-  text-decoration: underline royalblue;
-}
-
-.signin-neworder a {
-  color: #00bfff;
-}
-
-.flex-neworder {
-  display: flex;
-  width: 100%;
-  gap: 6px;
-}
-
-.form-neworder label {
-  position: relative;
-}
-
-.form-neworder label .input-neworder {
-  background-color: #333;
-  color: #fff;
-  width: 100%;
-  padding: 20px 05px 05px 10px;
-  outline: 0;
-  border: 1px solid rgba(105, 105, 105, 0.397);
-  border-radius: 10px;
-}
-
-.form-neworder label .input-neworder + span {
-  color: rgba(255, 255, 255, 0.5);
-  position: absolute;
-  left: 10px;
-  top: 0px;
-  font-size: 0.9em;
-  cursor: text;
-  transition: 0.3s ease;
-}
-
-.form-neworder label .input-neworder:placeholder-shown + span {
-  top: 12.5px;
-  font-size: 0.9em;
-}
-
-.form-neworder label .input-neworder:focus + span,
-.form-neworder label .input-neworder:valid + span {
-  color: #00bfff;
-  top: 0px;
-  font-size: 0.7em;
-  font-weight: 600;
-}
-
 .input-neworder {
-  font-size: medium;
+  background-color: #00ff75;
 }
-
-.submit-neworder {
-  border: none;
-  outline: none;
-  padding: 10px;
-  border-radius: 10px;
-  color: #fff;
-  font-size: 16px;
-  transform: 0.3s ease;
-  background-color: #00bfff;
+.container-1 {
+  display: flex;
+  gap: 10px;
 }
-
-.submit-neworder:hover {
-  background-color: #00bfff96;
+.container-2 {
+  display: flex;
+  gap: 10px;
 }
-
-@keyframes pulse {
-  from {
-    transform: scale(0.9);
-    opacity: 1;
-  }
-
-  to {
-    transform: scale(1.8);
-    opacity: 0;
-  }
+.container-3 {
+  display: flex;
+  gap: 10px;
+}
+.container-boton {
+  display: inline-block; /* El botón será tratado como un bloque en línea */
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
 }
