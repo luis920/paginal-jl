@@ -27,7 +27,7 @@ const Navbar = () => {
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link className="nav-link" to="/quote">
-                Generar cotización
+                Pedidos
               </Link>
             </li>
             <li className="nav-item">

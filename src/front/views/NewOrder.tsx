@@ -6,6 +6,7 @@ import {
   Text,
   StyleSheet,
 } from "@react-pdf/renderer";
+import Navbar from "../components/Navbar";
 
 // Define styles for the PDF document
 const styles = StyleSheet.create({
@@ -69,119 +70,123 @@ const NewOrder: React.FC = () => {
   };
 
   return (
-    <div
-      style={{
-        padding: "20px",
-        maxWidth: "400px",
-        margin: "auto",
-        color: "white",
-      }}
-    >
-      <h2>Create New Order</h2>
-      <form className="form-neworder">
-        <div className="container-1">
-          <div style={{ marginBottom: "10px" }}>
-            <label>Numero de orden:</label>
-            <input
-              className="input-neworder"
-              type="text"
-              name="Orden"
-              value={formData.Orden}
-              onChange={handleChange}
-              style={{ width: "100%", padding: "8px" }}
-            />
+    <div>
+      <Navbar />
+      <div
+        style={{
+          padding: "20px",
+          maxWidth: "400px",
+          margin: "auto",
+          color: "white",
+        }}
+      >
+        <h2>Create New Order</h2>
+        <form className="form-neworder">
+          <div className="container-1">
+            <div style={{ marginBottom: "10px" }}>
+              <label>Numero de orden:</label>
+              <input
+                className="input-neworder"
+                type="text"
+                name="Orden"
+                value={formData.Orden}
+                onChange={handleChange}
+                style={{ width: "100%", padding: "8px" }}
+              />
+            </div>
+            <div style={{ marginBottom: "10px" }}>
+              <label>Nombre:</label>
+              <input
+                className="input-neworder"
+                type="text"
+                name="Nombre"
+                value={formData.Nombre}
+                onChange={handleChange}
+                style={{ width: "100%", padding: "8px" }}
+              />
+            </div>
+            <div style={{ marginBottom: "10px" }}>
+              <label>Telefono:</label>
+              <input
+                className="input-neworder"
+                type="text"
+                name="Telefono"
+                value={formData.Telefono}
+                onChange={handleChange}
+                style={{ width: "100%", padding: "8px" }}
+              />
+            </div>
           </div>
-          <div style={{ marginBottom: "10px" }}>
-            <label>Nombre:</label>
-            <input
-              className="input-neworder"
-              type="text"
-              name="Nombre"
-              value={formData.Nombre}
-              onChange={handleChange}
-              style={{ width: "100%", padding: "8px" }}
-            />
+          <div className="container-2">
+            <div style={{ marginBottom: "10px" }}>
+              <label>Descripcion del producto:</label>
+              <input
+                className="input-neworder"
+                type="text"
+                name="Descripcion"
+                value={formData.Descripcion}
+                onChange={handleChange}
+                style={{ width: "100%", padding: "8px" }}
+              />
+            </div>
+            <div style={{ marginBottom: "10px" }}>
+              <label>Cantidad de piezas:</label>
+              <input
+                className="input-neworder"
+                type="text"
+                name="Cantidad"
+                value={formData.Cantidad}
+                onChange={handleChange}
+                style={{ width: "100%", padding: "8px" }}
+              />
+            </div>
           </div>
-          <div style={{ marginBottom: "10px" }}>
-            <label>Telefono:</label>
-            <textarea
-              className="input-neworder"
-              name="Telefono"
-              value={formData.Telefono}
-              onChange={handleChange}
-              style={{ width: "100%", padding: "8px" }}
-            />
-          </div>
-        </div>
-        <div className="container-2">
-          <div style={{ marginBottom: "10px" }}>
-            <label>Descripcion del producto:</label>
-            <input
-              className="input-neworder"
-              type="text"
-              name="Descripcion"
-              value={formData.Descripcion}
-              onChange={handleChange}
-              style={{ width: "100%", padding: "8px" }}
-            />
-          </div>
-          <div style={{ marginBottom: "10px" }}>
-            <label>Cantidad de piezas:</label>
-            <input
-              className="input-neworder"
-              type="text"
-              name="Cantidad"
-              value={formData.Cantidad}
-              onChange={handleChange}
-              style={{ width: "100%", padding: "8px" }}
-            />
-          </div>
-        </div>
-        <div className="container-3">
-          <div style={{ marginBottom: "10px" }}>
-            <label>Direccion:</label>
-            <input
-              className="input-neworder"
-              type="text"
-              name="Direccion"
-              value={formData.Direccion}
-              onChange={handleChange}
-              style={{ width: "100%", padding: "8px" }}
-            />
+          <div className="container-3">
+            <div style={{ marginBottom: "10px" }}>
+              <label>Direccion:</label>
+              <input
+                className="input-neworder"
+                type="text"
+                name="Direccion"
+                value={formData.Direccion}
+                onChange={handleChange}
+                style={{ width: "100%", padding: "8px" }}
+              />
+            </div>
+
+            <div style={{ marginBottom: "10px" }}>
+              <label>Tiempo estimado de entrega:</label>
+              <input
+                className="input-neworder"
+                type="text"
+                name="TiempoDeEntrega"
+                value={formData.TiempoDeEntrega}
+                onChange={handleChange}
+                style={{ width: "100%", padding: "8px" }}
+              />
+            </div>
           </div>
 
           <div style={{ marginBottom: "10px" }}>
-            <label>Tiempo estimado de entrega:</label>
+            <label>Total:</label>
             <input
               className="input-neworder"
               type="text"
-              name="TiempoDeEntrega"
-              value={formData.TiempoDeEntrega}
+              name="Total"
+              value={formData.Total}
               onChange={handleChange}
               style={{ width: "100%", padding: "8px" }}
             />
           </div>
-        </div>
-
-        <div style={{ marginBottom: "10px" }}>
-          <label>Total:</label>
-          <input
-            className="input-neworder"
-            type="text"
-            name="Total"
-            value={formData.Total}
-            onChange={handleChange}
-            style={{ width: "100%", padding: "8px" }}
-          />
-        </div>
-        <PDFDownloadLink
-          document={<MyPDFDocument orderDetails={formData} />}
-          fileName={`Order_${formData.Orden || "New"}.pdf`}
-          className="container-boton"
-        >
-          <h1>Generar Orden</h1>
-        </PDFDownloadLink>
-      </form>
+          <PDFDownloadLink
+            document={<MyPDFDocument orderDetails={formData} />}
+            fileName={`Order_${formData.Orden || "New"}.pdf`}
+            className="container-boton"
+          >
+            <h1>Generar Orden</h1>
+          </PDFDownloadLink>
+        </form>
+      </div>
     </div>
   );
 };
